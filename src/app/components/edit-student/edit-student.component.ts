@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Student } from 'src/app/student';
+import { Student } from '../../student';
 
 @Component({
   selector: 'app-edit-student',

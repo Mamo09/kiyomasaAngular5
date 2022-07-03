@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { StudentService } from 'src/app/services/student.service';
+import { StudentService } from '../../services/student.service';
 
 @Component({
   selector: 'app-navbar',
