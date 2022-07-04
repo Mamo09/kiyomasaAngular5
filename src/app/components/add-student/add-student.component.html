@@ -4,17 +4,18 @@
   <h1>SignIn</h1>
   <br />
   <form [formGroup]="form" (ngSubmit)="submit()" id="form">
-    <div class="form-group">
-      <label for="Email">Email address</label>
+    <div class="form-floating mb-3">
       <input
         type="email"
         class="form-control"
+        placeholder="35"
         aria-describedby="emailHelp"
         placeholder="Email Address"
         [class.is-invalid]="f['email'].touched && f['email'].invalid"
         formControlName="email"
         required
       />
+      <label for="email">Email Address</label>
       <div
         *ngIf="f['email'].touched && f['email'].invalid"
         class="text-danger text-sm-start"
@@ -27,18 +28,17 @@
         >
       </div>
     </div>
-    <br />
-    <div class="form-group">
-      <label for="Passowrd">Password</label>
+    <div class="form-floating mb-3">
       <input
         type="password"
         class="form-control"
+        placeholder="35"
         aria-describedby="passwordHelp"
-        placeholder="Password"
         [class.is-invalid]="f['password'].touched && f['password'].invalid"
         formControlName="password"
         required
       />
+      <label for="Password">Password</label>
       <div
         *ngIf="f['password'].touched && f['password'].invalid"
         class="text-danger text-sm-start"
@@ -52,7 +52,6 @@
         >
       </div>
     </div>
-    <br />
     <button type="submit" form="form" class="btn btn-primary mt-1">
       Login
     </button>
