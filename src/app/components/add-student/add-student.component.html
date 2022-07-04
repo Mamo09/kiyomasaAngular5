@@ -29,7 +29,7 @@
     </div>
     <br />
     <div class="form-group">
-      <label for="userPassowrd">Password</label>
+      <label for="Passowrd">Password</label>
       <input
         type="password"
         class="form-control"
@@ -46,8 +46,8 @@
         <small *ngIf="f['password'].errors && f['password'].errors['required']"
           >password is required.</small
         >
-        <small *ngIf="f['password'].errors && f['password'].errors['minLength']"
-          >Minimal Password 8 Character</small
+        <small *ngIf="f['password'].errors && f['password'].errors?.['minlength']"
+          >Password must be at least 8 characters</small
         >
       </div>
     </div>
