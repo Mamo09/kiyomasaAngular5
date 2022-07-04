@@ -1,33 +1,60 @@
 <div class="container-sm">
+  <br />
 
-    <br>
-    
-    <h1>SignIn</h1>
-    <br>
-    <form [formGroup]="form" (ngSubmit)="submit()" id="form">
-      <div class="form-group">
-        <label for="userEmail">Email address</label>
-        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"
-          [class.is-invalid]="f['email'].touched && f['email'].invalid" formControlName="email" required>
-        <div *ngIf="f['email'].touched && f['email'].invalid" class="text-danger text-sm-start">
-          <small *ngIf="f['email'].errors && f['email'].errors['required']">email is
-            required.</small>
-          <small *ngIf="f['email'].errors && f['email'].errors['email']">email is invalid</small>
-        </div>
+  <h1>SignIn</h1>
+  <br />
+  <form [formGroup]="form" (ngSubmit)="submit()" id="form">
+    <div class="form-group">
+      <label for="userEmail">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        [class.is-invalid]="f['email'].touched && f['email'].invalid"
+        formControlName="email"
+        required
+      />
+      <div
+        *ngIf="f['email'].touched && f['email'].invalid"
+        class="text-danger text-sm-start"
+      >
+        <small *ngIf="f['email'].errors && f['email'].errors['required']"
+          >email is required.</small
+        >
+        <small *ngIf="f['email'].errors && f['email'].errors['email']"
+          >email is invalid</small
+        >
       </div>
-      <br>
-      <div class="form-group">
-        <label for="userPassowrd">Password</label>
-        <input type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Enter password"
-          [class.is-invalid]="f['password'].touched && f['password'].invalid" formControlName="password" required>
-        <div *ngIf="f['password'].touched && f['password'].invalid" class="text-danger text-sm-start">
-          <small *ngIf="f['password'].errors && f['password'].errors['required']">password is
-            required.</small>
-          <small *ngIf="f['password'].errors && f['password'].errors['minLength']">minimal Password 8 Character</small>
-        </div>
-      </div>
-      <br>
-      <button type="submit" form="form" class="btn btn-primary mt-1">Login</button>
-    </form>
-    <br>
     </div>
+    <br />
+    <div class="form-group">
+      <label for="userPassowrd">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        aria-describedby="passwordHelp"
+        placeholder="Enter password"
+        [class.is-invalid]="f['password'].touched && f['password'].invalid"
+        formControlName="password"
+        required
+      />
+      <div
+        *ngIf="f['password'].touched && f['password'].invalid"
+        class="text-danger text-sm-start"
+      >
+        <small *ngIf="f['password'].errors && f['password'].errors['required']"
+          >password is required.</small
+        >
+        <small *ngIf="f['password'].errors && f['password'].errors['minLength']"
+          >Minimal Password 8 Character</small
+        >
+      </div>
+    </div>
+    <br />
+    <button type="submit" form="form" class="btn btn-primary mt-1">
+      Login
+    </button>
+  </form>
+  <br />
+</div>
