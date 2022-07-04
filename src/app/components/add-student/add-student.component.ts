@@ -1,30 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { RxwebValidators } from '@rxweb/reactive-form-validators';
 
 @Component({
   selector: 'app-add-student',
   templateUrl: './add-student.component.html',
-  styleUrls: ['./add-student.component.scss']
+  styleUrls: ['./add-student.component.scss'],
 })
 export class AddStudentComponent implements OnInit {
   form: FormGroup;
 
-  constructor(
-    private fb: FormBuilder,
-    public modal: NgbActiveModal
-  ) {
+  constructor(private fb: FormBuilder, public modal: NgbActiveModal) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-
+      password: [
+        '',
+        RxwebValidators.password({
+          validation: {
+            maxLength: 20,
+            minLength: 8,
+            digit: true,
+            specialCharacter: true,
+          },
+        }),
+      ],
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  get f(){
+  get f() {
     return this.form.controls;
   }
 
@@ -34,5 +40,4 @@ export class AddStudentComponent implements OnInit {
       this.modal.close(this.form.value);
     }
   }
-
 }

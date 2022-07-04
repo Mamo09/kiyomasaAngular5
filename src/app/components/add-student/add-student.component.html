@@ -2,7 +2,7 @@
 
     <br>
     
-    <h1>Sign Up</h1>
+    <h1>SignIn</h1>
     <br>
     <form [formGroup]="form" (ngSubmit)="submit()" id="form">
       <div class="form-group">
@@ -23,8 +23,7 @@
         <div *ngIf="f['password'].touched && f['password'].invalid" class="text-danger text-sm-start">
           <small *ngIf="f['password'].errors && f['password'].errors['required']">password is
             required.</small>
-          <small *ngIf="f['password'].errors && f['password'].errors['minLength']">password is too short
-            (min: 3).</small>
+          <small *ngIf="f['password'].errors && f['password'].errors['minLength']">minimal Password 8 Character</small>
         </div>
       </div>
       <br>
