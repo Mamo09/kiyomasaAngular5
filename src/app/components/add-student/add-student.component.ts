@@ -15,11 +15,8 @@ export class AddStudentComponent implements OnInit {
     public modal: NgbActiveModal
   ) {
     this.form = this.fb.group({
-      FirstName: ['', Validators.required],
-      LastName: ['', Validators.required],
-      Email: ['', [Validators.required, Validators.email]],
-      Address: ['', Validators.required],
-      Phone: ['', [Validators.required, Validators.pattern('^[0-9]{12}$')]]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
 
     });
   }
