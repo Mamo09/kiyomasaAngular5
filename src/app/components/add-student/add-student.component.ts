@@ -18,10 +18,8 @@ export class AddStudentComponent implements OnInit {
         '',
         RxwebValidators.password({
           validation: {
-            maxLength: 20,
             minLength: 8,
-            digit: true,
-            specialCharacter: true,
+            
           },
         }),
       ],
